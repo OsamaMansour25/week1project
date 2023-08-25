@@ -1,4 +1,4 @@
-/*
+
 package dat3.car.car.entity;
 
 
@@ -14,7 +14,6 @@ import lombok.Setter;
 @Table(name = "Members")
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     String user;
     String password;
     String email;
@@ -38,4 +37,3 @@ public class Member {
         this.zip = zip;
     }
 }
-*/

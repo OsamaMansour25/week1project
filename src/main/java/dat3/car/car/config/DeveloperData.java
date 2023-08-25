@@ -1,9 +1,9 @@
 package dat3.car.car.config;
 
 import dat3.car.car.entity.Car;
-//import dat3.car.car.entity.Member;
+import dat3.car.car.entity.Member;
 import dat3.car.car.repository.CarRepository;
-//import dat3.car.car.repository.MemberRepository;
+import dat3.car.car.repository.MemberRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
@@ -14,17 +14,17 @@ import java.util.List;
 @Controller
 public class DeveloperData implements ApplicationRunner {
     CarRepository carRepository;
-  //  MemberRepository memberRepository;
+    MemberRepository memberRepository;
 
-    public DeveloperData(CarRepository carRepository) {
+    public DeveloperData(CarRepository carRepository, MemberRepository memberRepository) {
         this.carRepository = carRepository;
-      //  this.memberRepository = memberRepository;
+       this.memberRepository = memberRepository;
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         List<Car> cars = new ArrayList<>();
-      //  List<Member> members = new ArrayList<>();
+        List<Member> members = new ArrayList<>();
         // Setup car data
         cars.add(new Car("Toyota", "Corolla", 500, 5));
         cars.add(new Car("Honda", "Civic", 600, 10));
@@ -79,13 +79,13 @@ public class DeveloperData implements ApplicationRunner {
         carRepository.saveAll(cars);
 
 
-     /*   members.add(new Member("user1", "password1", "user1@example.com", "John", "Doe", "123 Main St", "City1", "12345"));
+       members.add(new Member("user1", "password1", "user1@example.com", "John", "Doe", "123 Main St", "City1", "12345"));
         members.add(new Member("user2", "password2", "user2@example.com", "Jane", "Smith", "456 Elm St", "City2", "67890"));
         members.add(new Member("user3", "password3", "user3@example.com", "Michael", "Johnson", "789 Oak St", "City3", "13579"));
         members.add(new Member("user4", "password4", "user4@example.com", "Emily", "Williams", "987 Maple St", "City4", "24680"));
         members.add(new Member("user5", "password5", "user5@example.com", "David", "Brown", "654 Pine St", "City5", "98765"));
         memberRepository.saveAll(members);
-        carRepository.saveAll(cars); */
+        carRepository.saveAll(cars);
 
     }
 }
