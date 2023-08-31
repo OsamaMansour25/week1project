@@ -6,15 +6,19 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "Members")
-public class Member {
+public class Member extends AdminDetails {
     @Id
-    String user;
+    String username;
     String password;
     String email;
     String firstName;
@@ -25,9 +29,9 @@ public class Member {
     boolean approved;
     int ranking;
 
-    public Member(String user, String password, String email, String firstName, String lastName, String street,
+    public Member(String username, String password, String email, String firstName, String lastName, String street,
     String city, String zip) {
-        this.user = user;
+        this.username = username;
         this.password = password;
         this.email = email;
         this.firstName = firstName;

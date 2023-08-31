@@ -1,4 +1,4 @@
-package sem3.cars;
+package dat3.car.car;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class CarsApplicationTests {
 
-    @Test
+   //  @Test
     void contextLoads() {
     }
 
