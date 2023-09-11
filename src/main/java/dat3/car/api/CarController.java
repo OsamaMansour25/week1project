@@ -1,8 +1,7 @@
-package dat3.car.car.api;
+package dat3.car.api;
 
-import dat3.car.car.dto.CarResponse;
-import dat3.car.car.dto.MemberResponse;
-import dat3.car.car.service.CarService;
+import dat3.car.dto.CarResponse;
+import dat3.car.service.CarService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +23,9 @@ public class CarController {
         return carService.getCars(false);
     }
     //Security admin
-    @GetMapping(path = "/{brand}")
-    CarResponse getCarByBrand(@PathVariable String brand) throws Exception {
-        return carService.findByBrand(brand);
+    @GetMapping(path = "/{brand}/{model}")
+    CarResponse getCarByBrandAndModel(@PathVariable String brand, String model) throws Exception {
+        return carService.findByBrandAndModel(brand, model);
     }
 
 }

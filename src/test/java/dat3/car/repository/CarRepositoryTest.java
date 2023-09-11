@@ -1,6 +1,6 @@
-package dat3.car.car.repository;
+package dat3.car.repository;
 
-import dat3.car.car.entity.Car;
+import dat3.car.entity.Car;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +25,10 @@ class CarRepositoryTest {
     }
 
     @Test
-    void findByBrand() {
-        Car c1 = carRepository.findByBrand("Toyota");
+    void findByBrandAndModel() {
+        Car c1 = carRepository.findByBrandAndModel("Toyota", "Corolla");
         assertEquals("Toyota", c1.getBrand());
+        assertEquals("Corolla", c1.getModel());
     }
 
     @Test

@@ -1,13 +1,12 @@
-package dat3.car.car.entity;
+package dat3.car.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,6 +26,16 @@ public class Car extends AdminDetails {
     int pricePrDay;
     @Column(name = "max_discount")
     int bestDiscount;
+
+    @OneToMany(mappedBy = "car")
+    private List<Reservation> reservations;
+
+    public void addReservation(Reservation reservation) {
+        if(reservations == null) {
+            reservations = new ArrayList<>();
+        }
+        reservations.add(reservation);
+    }
 
     public Car(String brand, String model, int pricePrDay, int bestDiscount) {
         this.brand = brand;

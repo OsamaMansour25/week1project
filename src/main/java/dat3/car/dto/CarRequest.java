@@ -1,7 +1,6 @@
-package dat3.car.car.dto;
+package dat3.car.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import dat3.car.car.entity.Car;
+import dat3.car.entity.Car;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
