@@ -1,0 +1,8 @@
+## Where and why have you used a @OneToMany annotation?
+In my car entity i have used the annotation, because the relation between car and reservations is one to many. One car can have many reservations.
+## Where and why have you used a @ManyToOne?
+In my reservation entity i have used it twice. The relation between reservations and both car and member is many to one. A car or member can have many reservations.
+
+## The purpose of the CascadeType, FetchType and mappedBy attributes you can use with the @OneToMany annotation?
+The Cascade type in this project is "writing"/saving data, it does it automatically. The FetchType determines whether all of the data gets drawn or not. EAGER draws every data even though it isn't used and LAZY only draws it if it actually is getting used.
+mappedBy specifies which entity is managing the relationship between the two. Reservations is mapped by both Car and Member in both their classes, which means that Car and Member manages the operations between their relationship.
