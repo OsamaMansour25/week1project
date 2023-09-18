@@ -2,14 +2,12 @@ package dat3.car.api;
 
 import dat3.car.dto.CarResponse;
 import dat3.car.service.CarService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/cars")
 public class CarController {
     CarService carService;
